@@ -56,9 +56,17 @@ class App extends React.Component {
 
         return (
             <React.Fragment>
-                {genreList.map((genre) => (
-                    <button onClick={(() => {this.filterGenreMovies(genre.id)})}>{genre.name}</button>
-                ))}
+                {genreList.map((genre, index) => {
+                    return (
+                        <button
+                            onClick={(() => {
+                                this.filterGenreMovies(genre.id)
+                            })}
+                            key={index}>
+                            {genre.name}
+                        </button>
+                    );
+                })}
                 {movieList.map((movie) => (
                     <Card key={movie.id} data={movie}/>
                 ))}
