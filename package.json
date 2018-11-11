@@ -31,6 +31,7 @@
     "axios": "^0.18.0",
     "react": "16.4.2",
     "react-dom": "16.4.2",
-    "react-hot-loader": "next"
+    "react-hot-loader": "next",
+    "prop-types": "latest"
   }
 }
