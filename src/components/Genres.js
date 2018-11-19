@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { requestGenreMovies, requestGenres, addLog } from "../actions/actions";
+import { requestGenreMovies, requestGenres } from "../thunks";
+import { addLog } from "../actions/actions";
 
 class Genres extends React.Component {
     constructor() {

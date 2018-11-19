@@ -3,12 +3,14 @@ import {connect} from 'react-redux';
 import Card from './Card';
 import Genres from './Genres';
 import {
-    setMovieList,
-    getPopularMovies,
     addMovieHeart,
     removeMovieHeart,
     addLog,
 } from '../actions/actions';
+import {
+    setMovieList,
+    getPopularMovies,
+} from '../thunks';
 
 class App extends React.Component {
     constructor() {
@@ -20,18 +22,21 @@ class App extends React.Component {
         addLog('Aplikacija užkrauta');
         onGetPopularMovies();
     }
+
     setMovieList(movieList) {
         const {onSetMovieList} = this.props;
         onSetMovieList(movieList);
     };
+
     removeMovieHeart(movie) {
-        const { onRemoveMovieHeart, addLog } = this.props;
-        addLog('Nuimta širdelė filmui '+ movie.title);
+        const {onRemoveMovieHeart, addLog} = this.props;
+        addLog('Nuimta širdelė filmui ' + movie.title);
         onRemoveMovieHeart(movie.id);
     };
+
     addMovieHeart(movie) {
-        const { onAddMovieHeart, addLog } = this.props;
-        addLog('Uždėta širdelė filmui '+ movie.title);
+        const {onAddMovieHeart, addLog} = this.props;
+        addLog('Uždėta širdelė filmui ' + movie.title);
         onAddMovieHeart(movie.id);
     };
 
